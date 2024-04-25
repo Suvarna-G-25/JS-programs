@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let count=0;
+        let arr=["a","one","a","two","one","three"];
+        for(i=0;i<arr.length;i++)
+        {
+            for(j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]===arr[j])
+                {
+                count++;
+                break;
+                }
+            }
+        }
+        document.write("No of duplicates in array"+count);
+    </script>
+</body>
+</html>

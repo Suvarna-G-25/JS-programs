@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    <script>
+        var num=prompt("Enter a Number");
+        let n1=0,n2=1,nextTerm=n1+n2;
+        document.write(`Fibonacci Series:`);
+        document.write(`${n1} <br> ${n2}`);
+        while(nextTerm<=num)
+        {
+            document.write(`<br>${nextTerm}`);
+            n1=n2;
+            n2=nextTerm;
+            nextTerm=n1+n2;
+        }
+    </script>
+    </body>
+</html>

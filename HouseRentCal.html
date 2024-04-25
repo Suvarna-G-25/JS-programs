@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border:2px solid lightgrey;
+            width:1000px;
+            margin-left:200px;
+            border-radius:25px;
+            padding:70px;
+            margin-top:100px;
+            height:430px;
+        }
+        h1{
+            margin-left:350px;
+            margin-top:-30px;
+        }
+        ::placeholder{
+            font-size:15px;
+            text-transform:uppercase;
+        }
+       .user{
+        margin-left:150px;
+        border-radius:15px;
+        padding:10px;
+        width:200px;
+        margin-top:50px;
+       } 
+       .pswd{
+        margin-left:600px;
+        border-radius:15px;
+        padding:10px;
+        width:200px;
+        margin-top:-500px;
+       }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+    <form action=""id="myform">
+        <h1>HOUSE RENT CALCULATOR</h1>
+        <div>
+       <input type="text" placeholder="username"id="username" class="user">
+       </div>
+       <div>
+       <input type="password" placeholder="password"id="password" class="pswd">
+    </div>
+    <div>
+        <select id="city">
+        <option>Select City</option>
+        <option value="3000">chennai</option>
+        <option value="5000">Hyd</option>
+        <option value="8000">Bangalore</option>
+        <option value="4000">Vizag</option>
+        <option value="6000">Vijayawada</option>
+    </select>
+    </div>
+    <div>
+        <select id="sft">
+            <option value="1200">12sft</option>
+            <option value="1500">15sft</option>
+            <option value="1700">17sft</option>
+            <option value="1900">19sft</option>
+            <option value="1300">13sft</option>
+        </select>
+    </div>
+    <div>
+        <select id="bedrooms">
+            <option value="20000">1bhk</option>
+            <option value="40000">2bhk</option>
+            <option value="60000">3bhk</option>
+            <option value="80000">4bhk</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Balcony</label>
+        <input type="radio" name="Balcony"id="" value="50000">YES
+        <input type="radio" name="Balcony"id="" value="0">NO
+    </div>
+    <div>
+        <button id="cancelcal">Cancel</button>
+    </div>
+    <div>
+        <button id="calculate" type="submit">Calculator</button>
+    </div>
+    <label for="" id="res"></label>
+    </form>
+</div>
+</body>
+<script>
+    document.getElementById("myform").addEventListener('submit',(e)=>
+    {
+       e.preventDefault();
+       var uname=document.getElementById("username").value;
+       var pwd=document.getElementById("password").value;
+       var city=document.getElementById("city").value;
+       var area=document.getElementById("sft").value;
+       var bedrooms=document.getElementById("bedrooms").value;
+       var bc=document.querySelector("input[name='Balcony']:checked").value;
+
+       if(uname==="divya"&& pwd=="divya@123")
+       {
+          var total=(city*area)+parseInt(bedrooms)+parseInt(bc);
+          document.getElementById("res").innerHTML="Dear divya Expected Rent is:"+total;
+       }
+       else{
+        alert("Invalid login details")
+       }
+      
+    });
+</script>
+</html>

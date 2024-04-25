@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="printtime"></h1>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopfun()">Stop</button>
+<script>
+    var sec=0,min=0,hour=0;
+    var res;
+    function startTimer()
+    {
+       res=setInterval(CalculateTimer,1000)
+    }
+    function CalculateTimer()
+    {
+      sec++;          
+       if(sec==60)
+       {
+         min++;
+         sec=0;
+       }
+       if(min==60)
+       {
+          hour++;
+          min=0;
+       }
+       document.getElementById("printtime").innerHTML=`${hour}:${min}:${sec}`
+    }
+    function stopfun()
+    {
+        clearInterval(res)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="printbmi"></h1>
+    <form>
+    <div>
+        <label for="">Student Name=</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="">Height=</label>
+        <input type="number">
+    </div>
+    <div>
+        <label for="">Weight=</label>
+        <input type="number">
+    </div>
+    <div>
+        <button type="submit">Calculate</button>
+    </div>
+    
+    </form>
+    <script>
+        function calculate()
+        {
+            let height=parseInt(document.getElementById("height").value);
+            let weight=parseInt(document.getElementById("weight").value);
+            var bmi=parseInt(weight)/(parseInt(height)/100)**2;
+            if(bmi<18.5)
+            {
+               document.getElementById("printbmi").innerHTML="UnderWight"
+            }
+            if(bmi>=18.5 && bmi<=25)
+            {
+                document.getElementById("printbmi").innerHTML="Normalweight"
+            }
+            if(bmi>=25)
+            {
+                document.getElementById("printbmi").innerHTML="Overweight"
+            }
+        }
+    </script>
+    
+</body>
+</html>

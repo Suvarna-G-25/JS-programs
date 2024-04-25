@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:#C6DEFF;
+        }
+        .bankimg{
+            margin-left:100px;
+            margin-top:70px;
+        }
+        .ds{
+            border:none;
+            padding:30px;
+            width:250px;
+            margin-top:-400px;
+            margin-left:750px;
+            font-size:20px;
+            background-color:#C6DEFF;
+            box-shadow:1px 2px 1px 2px grey;
+            border-top-left-radius:25px;
+            border-bottom-right-radius:25px;
+        }
+        .inp{
+            padding:10px;
+            width:200px;
+        }
+        ::placeholder{
+            text-transform:uppercase;
+        }
+        .cal{
+            width:170px;
+            padding:8px;
+            background-color:#87CEEB;
+            font-size:20px;
+            color:white;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <img class="bankimg" src="https://cdni.iconscout.com/illustration/premium/thumb/bank-locker-5789487-4849368.png?f=webp"height="500"width="500">
+    <div class="ds">
+    <form>
+        <input type="name" placeholder="username" id="username" class="inp">
+        <br><br>
+        <input type="age" placeholder="age" id="age" class="inp">
+        <br><br>
+        <input type="amount" placeholder="amount" id="amount" class="inp">
+        <br><br>
+        <input type="tenure" placeholder="tenure" id="tenure" class="inp">
+        <br><br>
+        <button class="cal"type="submit" onclick="checkcal()">Calculator</button>
+    </form>
+    <script>
+        function checkcal()
+        {
+           var uname,age,amount,tenure;
+           uname=document.getElementById("username").value;
+           age=document.getElementById("age").value;
+           amount=document.getElementById("amount").value;
+           tenure=document.getElementById("tenure").value;
+           if(age>60)
+           {
+            var interest=parseInt((amount*tenure*8)/100)
+            document.write(uname+" maturity amount is"+(interest+parseInt(amount)))
+           }
+           else
+           {
+            var interest=parseInt((amount*tenure*5)/100)
+            gst=(0.5/100)*interest
+            interest=interest-gst
+            document.write(uname+" maturity amount is"+(interest+parseInt(amount)))
+           }
+        }
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Count No of Vowels</h2>
+    <script>
+    let str="SUVARNA";
+    str=str.toLowerCase();
+    newstr=Array.from(str)
+    count=0;
+    newstr.forEach((i)=>{
+      switch(i)
+      {
+        case 'a':
+            count++;
+            break;
+        case 'e':
+            count++;
+            
+            break;
+        case 'i':
+            count++;
+            break;
+        case 'o':
+            count++;
+            break;
+        case 'u':
+            count++;
+            break;
+      }
+    })
+    document.write(count)
+    </script>
+</body>
+</html>

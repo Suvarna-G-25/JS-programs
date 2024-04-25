@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+    <div>
+        <label for="">Height=</label>
+        <input id="height" type="number" placeholder="height in cms">
+    </div>
+    <div>
+        <label for="">Weight=</label>
+        <input id="weight" type="number" placeholder="weight in Kgs">
+    </div>
+    <h3 id="bmi"></h3>
+    <div>
+        <button type="submit">Calculate</button>
+    </div>
+    </form>
+    <script>
+            document.getElementById("myform").addEventListener('submit',(e)=>
+            {
+                e.preventDefault();
+                var height=document.getElementById("height").value;
+                var weight=document.getElementById("weight").value;
+                var bmi=weight/(height**2);
+                var res="";
+                if(bmi>0)
+                {
+                if(bmi<18.5)
+                    res="underweight";
+                else if(bmi>=18.5 && bmi<25)
+                    res="HealthyWeight";
+                else if(bmi>=25 && bmi<30)
+                    res="Overweight";
+                else
+                    res="Obesity";
+                    document.getElementById("bmi").innerHTML="BMI: "+bmi +res;
+                    document.getElementById("res").innerHTML="You are having "+res;
+                }
+                else{
+                    document.getElementById("res").innerHTML="Invalid Inputs";
+                }
+            })
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Palindrome Program</h2>
+    <script>
+    var num=prompt("Enter a Number");
+    var temp=num,rev=0;
+    while(temp>0)
+    {
+       rem=temp%10;
+       rev=(rev*10)+rem;
+       temp=parseInt(temp/10);
+       if(num==rev)
+       {
+        document.write(`${temp} is a palindrome`);
+       }
+       else
+       {
+        document.write(`${temp} is not a palindrome`);
+       }
+    }
+</script>
+</body>
+</html>

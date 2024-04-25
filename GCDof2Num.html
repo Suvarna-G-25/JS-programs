@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>GCD of Two Numbers</h2>
+    <script>
+        var a=prompt("Enter First number");
+        var b=prompt("Enter second number");
+        while(b!=0)
+        {
+            temp=b;
+            b=a%b;
+            a=temp;
+        }
+        document.write(`${a} is GCD`);
+    </script>
+</body>
+</html>
